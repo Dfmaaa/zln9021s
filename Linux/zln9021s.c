@@ -10,7 +10,11 @@
 #define RECEIVE_LIMIT 1024
 #define CLIENT_IP "192.168.29.30"
 #define zero(_P) memset(&_P,0,sizeof(_P))
+int handler(){
+}
 int main(int argc, char **argv){
+	signal(SIGINT,handler);
+	signal(SIGTERM,handler);
     int sockets, n=0;
     char receive_buffer[RECEIVE_LIMIT+1];
     struct sockaddr_in self; 
