@@ -15,6 +15,8 @@ int handler(){
 int main(int argc, char **argv){
 	signal(SIGINT,handler);
 	signal(SIGTERM,handler);
+	signal(SIGSTOP,handler);
+	signal(SIGTSTP,handler);
     int sockets, n=0;
     char receive_buffer[RECEIVE_LIMIT+1];
     struct sockaddr_in self; 
